@@ -19,6 +19,7 @@ flex-wrap: wrap;
 
 
 aside{
+    
     display:block;
     max-width:200px;
     color:white;
