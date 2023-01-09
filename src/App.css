@@ -1,0 +1,45 @@
+.swal2-container.swal2-center>.swal2-popup {
+    height: calc(100vh - 50px) !important;
+    width: 100vw !important;
+    background: linear-gradient(to right, #f274741a, #dd18189c);
+    align-items: center;
+    align-content: center;
+    color: white;
+}
+
+.GameTitle {
+    padding: 10px;
+    max-width: 600px;
+    margin: auto;
+    box-shadow: 2px 3px 50px #00a8ff;
+    border-radius: 30px;
+    animation: fadeInRight 1s 1.2s linear both !important;
+}
+
+.GameInst {
+    color: #00a8ff;
+    font-weight: bold;
+    font-size: 40px;
+    letter-spacing: 4px;
+    filter: drop-shadow(2px 2px 3px black);
+    margin-bottom: 0;
+}
+
+.GameTitle ul {
+    list-style-type: circle;
+    text-align: left;
+    color: black;
+    margin-top: 0;
+}
+
+.GameTitle ul li {
+    font-weight: normal;
+    font-size: 18px;
+    color: bisque;
+}
+
+.GameTitle ul li strong {
+    color: black;
+    font-size: 20px;
+    color: #00a8ff;
+}

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState , useEffect } from 'react';
 
 import { createStage, checkCollision } from '../gameHelpers';
 import { StyledTetrisWrapper, StyledTetris } from './Styles/StyledTetrisWrapper';
@@ -11,8 +11,10 @@ import { useGameStatus } from '../hooks/useGameStatus';
 import Stage from './Stage';
 import Display from './Display';
 import StartButton from './StartButton';
+import Swal from 'sweetalert2';
 
 const Tetris = () => {
+
   const [dropTime, setDropTime] = useState(null);
   const [gameOver, setGameOver] = useState(false);
 
@@ -21,8 +23,6 @@ const Tetris = () => {
   const [score, setScore, rows, setRows, level, setLevel] = useGameStatus(
     rowsCleared
   );
-
-
 
   const movePlayer = dir => {
     if (!checkCollision(player, stage, { x: dir, y: 0 })) {
@@ -95,6 +95,37 @@ const Tetris = () => {
       }
     }
   };
+
+
+  useEffect(()=>{
+    setTimeout(()=>{
+      Swal.fire({
+        title: `<div class='GameTitle'>
+          <p class='GameInst'> * Game Instructions *</p>
+          <ul>
+            <li> 
+              <strong> Move the tetrominos. </strong> You can move them left and right, and you can rotate them in both directions. (up is clockwise, and You can also speed up their fall )
+            </li>
+            <li> 
+              <strong>Understand the different tetrominos. </strong> There are seven different types of tetriminos: the I, O, L, J, S, Z, and T tetriminos
+            </li>
+            <li> 
+              <strong>Complete lines to gain points and raise the level. </strong> When a line of blocks is created, the entire line disappears, points are rewarded and the stack is pushed down. The more lines completed at once, the more points gained.
+            </li>
+            <li> 
+              <strong>Check upcoming pieces and plan for them. </strong> This will become easier the more you play, don't rush yourself.
+            </li>
+          </ul>
+        </div>`,
+        showClass: {
+          popup: 'animate__animated animate__fadeInDown'
+        },
+        hideClass: {
+          popup: 'animate__animated animate__fadeOutUp'
+        }
+      })
+    },500)
+  },[])
 
   return (
     <StyledTetrisWrapper role="button" tabIndex="0" onKeyDown={e => move(e)} onKeyUp={keyUp}>
