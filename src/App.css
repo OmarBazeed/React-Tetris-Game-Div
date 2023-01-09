@@ -43,3 +43,18 @@
     font-size: 20px;
     color: #00a8ff;
 }
+
+@media screen and (max-width: 500px) {
+    .GameTitle {
+        max-width: 300px;
+    }
+    .GameInst {
+        font-size: 22px;
+    }
+    .GameTitle ul li {
+        font-size: 15px;
+    }
+    .GameTitle ul li strong {
+        font-size: 18px;
+    }
+}
