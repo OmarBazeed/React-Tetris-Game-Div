@@ -101,8 +101,7 @@ const Tetris = () => {
     setTimeout(()=>{
       Swal.fire({
         title: `<div class='GameTitle'>
-          <p class='GameInst'> * Game Instructions *</p>
-          <ul>
+          <p class='GameInst'> * Game Instructions *</p><ul>
             <li> 
               <strong> Move the tetrominos. </strong> You can move them left and right, and you can rotate them in both directions. (up is clockwise, and You can also speed up their fall )
             </li>
