@@ -10,7 +10,7 @@ box-sizing: border-box;
     margin: 0 0 20px 0;
     cursor: pointer;
     font-family: pixel;
-    font-size: 18px;
+    font-size: 17px;
     box-shadow: 0px 1px 9px 0px #add8e6;
     transition: all 0.7s;
     color: red;
