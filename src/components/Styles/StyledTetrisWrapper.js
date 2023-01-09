@@ -16,7 +16,7 @@ padding:40px;
 margin: 0 auto;
 max-width:900px;
 flex-wrap: wrap;
-
+justify-content:center;
 
 aside{
     

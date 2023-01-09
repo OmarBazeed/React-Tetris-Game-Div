@@ -15,6 +15,6 @@ box-sizing: border-box;
     transition: all 0.7s;
     color: red;
     &:hover{
-        letter-spacing:3px;
+        letter-spacing:2px;
     }
 `
