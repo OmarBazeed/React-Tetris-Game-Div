@@ -1,4 +1,5 @@
 ## Tetrominos Game ! Built With `React` And `Custom Hooks` :
+ + Needs Big **Logic!** And Some Little **Maths!** ...
  + Creating A Tetrominos Game Using `react` And `custom-hooks` Is A Great App 
  + Using `styled-components` For Styling The App
  + Fully Responsive App Smoothly With `Bootstrap`
