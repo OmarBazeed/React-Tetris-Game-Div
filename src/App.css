@@ -1,60 +1,62 @@
-.swal2-container.swal2-center>.swal2-popup {
-    height: calc(100vh - 50px) !important;
-    width: 100vw !important;
-    background: linear-gradient(to right, #f274741a, #dd18189c);
-    align-items: center;
-    align-content: center;
-    color: white;
+.swal2-container.swal2-center > .swal2-popup {
+  height: calc(100vh - 50px) !important;
+  width: 100vw !important;
+  background: transparent;
+  align-items: center;
+  align-content: center;
+  color: white;
 }
 
 .GameTitle {
-    padding: 10px;
-    max-width: 600px;
-    margin: auto;
-    box-shadow: 2px 3px 50px #00a8ff;
-    border-radius: 30px;
-    animation: fadeInRight 1s 1.2s linear both !important;
+  padding: 10px;
+  max-width: 600px;
+  margin: auto;
+  box-shadow: -1px 0px 4px rgba(0, 0, 0, 1);
+  border-radius: 30px;
+  animation: fadeInRight 1s 1.2s linear both !important;
+  background: #8080807a;
 }
 
 .GameInst {
-    color: #00a8ff;
-    font-weight: bold;
-    font-size: 40px;
-    letter-spacing: 4px;
-    filter: drop-shadow(2px 2px 3px black);
-    margin-bottom: 0;
+  color: #00a8ff;
+  font-weight: bold;
+  font-size: 40px;
+  letter-spacing: 4px;
+  filter: drop-shadow(2px 2px 3px black);
+  margin-bottom: 0;
 }
 
 .GameTitle ul {
-    list-style-type: circle;
-    text-align: left;
-    color: black;
-    margin-top: 0;
+  list-style-type: circle;
+  text-align: left;
+  color: black;
+  margin-top: 0;
 }
 
 .GameTitle ul li {
-    font-weight: normal;
-    font-size: 18px;
-    color: bisque;
+  font-weight: normal;
+  font-size: 18px;
+  color: white;
+  word-spacing: 2px;
 }
 
 .GameTitle ul li strong {
-    color: black;
-    font-size: 20px;
-    color: #00a8ff;
+  color: black;
+  font-size: 25px;
+  color: #00a8ff;
 }
 
 @media screen and (max-width: 500px) {
-    .GameTitle {
-        max-width: 300px;
-    }
-    .GameInst {
-        font-size: 22px;
-    }
-    .GameTitle ul li {
-        font-size: 15px;
-    }
-    .GameTitle ul li strong {
-        font-size: 18px;
-    }
+  .GameTitle {
+    max-width: 300px;
+  }
+  .GameInst {
+    font-size: 22px;
+  }
+  .GameTitle ul li {
+    font-size: 15px;
+  }
+  .GameTitle ul li strong {
+    font-size: 18px;
+  }
 }

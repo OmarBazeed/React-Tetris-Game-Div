@@ -1,30 +1,31 @@
-import React, { useState , useEffect } from 'react';
+import React, { useState, useEffect } from "react";
 
-import { createStage, checkCollision } from '../gameHelpers';
-import { StyledTetrisWrapper, StyledTetris } from './Styles/StyledTetrisWrapper';
+import { createStage, checkCollision } from "../gameHelpers";
+import {
+  StyledTetrisWrapper,
+  StyledTetris,
+} from "./Styles/StyledTetrisWrapper";
 
-import { useInterval } from '../hooks/useInterval';
-import { usePlayer } from '../hooks/usePlayer';
-import { useStage } from '../hooks/useStage';
-import { useGameStatus } from '../hooks/useGameStatus';
+import { useInterval } from "../hooks/useInterval";
+import { usePlayer } from "../hooks/usePlayer";
+import { useStage } from "../hooks/useStage";
+import { useGameStatus } from "../hooks/useGameStatus";
 
-import Stage from './Stage';
-import Display from './Display';
-import StartButton from './StartButton';
-import Swal from 'sweetalert2';
+import Stage from "./Stage";
+import Display from "./Display";
+import StartButton from "./StartButton";
+import Swal from "sweetalert2";
 
 const Tetris = () => {
-
   const [dropTime, setDropTime] = useState(null);
   const [gameOver, setGameOver] = useState(false);
 
   const [player, updatePlayerPos, resetPlayer, playerRotate] = usePlayer();
   const [stage, setStage, rowsCleared] = useStage(player, resetPlayer);
-  const [score, setScore, rows, setRows, level, setLevel] = useGameStatus(
-    rowsCleared
-  );
+  const [score, setScore, rows, setRows, level, setLevel] =
+    useGameStatus(rowsCleared);
 
-  const movePlayer = dir => {
+  const movePlayer = (dir) => {
     if (!checkCollision(player, stage, { x: dir, y: 0 })) {
       updatePlayerPos({ x: dir, y: 0 });
     }
@@ -40,7 +41,7 @@ const Tetris = () => {
   };
 
   const startGame = () => {
-    // Reset 
+    // Reset
     setStage(createStage());
     setDropTime(1000);
     resetPlayer();
@@ -53,7 +54,7 @@ const Tetris = () => {
   const drop = () => {
     // Increase level when player has cleared 10 rows
     if (rows > (level + 1) * 10) {
-      setLevel(prev => prev + 1);
+      setLevel((prev) => prev + 1);
       // increase speed
       setDropTime(1000 / (level + 1) + 200);
     }
@@ -63,7 +64,7 @@ const Tetris = () => {
     } else {
       // Game over!
       if (player.pos.y < 1) {
-        console.log('GAME OVER!!!');
+        console.log("GAME OVER!!!");
         setGameOver(true);
         setDropTime(null);
       }
@@ -96,9 +97,8 @@ const Tetris = () => {
     }
   };
 
-
-  useEffect(()=>{
-    setTimeout(()=>{
+  useEffect(() => {
+    setTimeout(() => {
       Swal.fire({
         title: `<div class='GameTitle'>
           <p class='GameInst'> * Game Instructions *</p><ul>
@@ -117,19 +117,23 @@ const Tetris = () => {
           </ul>
         </div>`,
         showClass: {
-          popup: 'animate__animated animate__fadeInDown'
+          popup: "animate__animated animate__fadeInDown",
         },
         hideClass: {
-          popup: 'animate__animated animate__fadeOutUp'
-        }
-      })
-    },500)
-  },[])
+          popup: "animate__animated animate__fadeOutUp",
+        },
+      });
+    }, 500);
+  }, []);
 
   return (
-    <StyledTetrisWrapper role="button" tabIndex="0" onKeyDown={e => move(e)} onKeyUp={keyUp}>
+    <StyledTetrisWrapper
+      role="button"
+      tabIndex="0"
+      onKeyDown={(e) => move(e)}
+      onKeyUp={keyUp}
+    >
       <StyledTetris>
-
         <Stage stage={stage} />
 
         <aside>
@@ -144,7 +148,6 @@ const Tetris = () => {
           )}
           <StartButton callback={startGame} />
         </aside>
-        
       </StyledTetris>
     </StyledTetrisWrapper>
   );
